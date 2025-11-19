@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadora Globalia México - Premium Traveler Accommodation Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.95) 0%, rgba(0, 77, 153, 0.95) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23003366" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 42px;
+            color: #0066cc;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #0066cc, #004d99);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        .service-card h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 5px solid #0066cc;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .advantage-card h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .advantage-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .process-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0066cc, #004d99);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+        }
+
+        .process-step h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 35px;
+            font-size: 36px;
+            color: #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
+                content: '↓';
+                position: static;
+                display: block;
+                margin: 20px 0;
+            }
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #0066cc, #004d99);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #0066cc, #004d99);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 30px;
+        }
+
+        .contact-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #002244;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Operadora Globalia</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#advantages">Why Us</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Premier Traveler Accommodation Solutions in Cancún</h1>
+            <p>Your trusted partner for exceptional hospitality services and seamless accommodation experiences in Mexico's most beautiful destinations</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Discover Our Story</h2>
+            <p class="section-subtitle">Excellence in hospitality since our foundation</p>
+            <div class="about-content">
+                <p>Operadora Globalia México has established itself as a leading provider of premium traveler accommodation services in the heart of Quintana Roo's most vibrant destinations. With our headquarters strategically located on Kukulkan Km. 16.5 in the Hotel Zone of Cancún, we've built our reputation on delivering exceptional hospitality experiences that exceed expectations. Our commitment to excellence drives everything we do, from the moment guests first contact us until long after their stay concludes.</p>
+                <br>
+                <p>We understand that modern travelers demand more than just a place to stay – they seek memorable experiences, personalized service, and seamless coordination throughout their journey. Our team of dedicated hospitality professionals brings years of expertise in the accommodation industry, combining local knowledge with international service standards. We pride ourselves on our attention to detail, our ability to anticipate guest needs, and our unwavering dedication to creating positive, lasting impressions.</p>
+                <br>
+                <p>What sets us apart is our comprehensive approach to traveler accommodation services. We don't just manage properties; we create environments where comfort meets luxury, where efficiency meets warmth, and where every guest feels valued and cared for. Our extensive network of premium accommodations across Cancún and the Riviera Maya allows us to match each traveler with their ideal setting, whether they're seeking beachfront luxury, cultural immersion, or business convenience. Through innovation, integrity, and a genuine passion for hospitality, Operadora Globalia México continues to set new standards in the industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <p class="section-subtitle">Comprehensive solutions tailored to your accommodation needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Premium Accommodation Management</h3>
+                    <p>We provide end-to-end management of luxury accommodations, ensuring every property meets the highest standards of quality and comfort. Our services include property oversight, guest relations coordination, and quality assurance protocols that guarantee exceptional experiences. From boutique hotels to exclusive vacation rentals, we maintain excellence across all categories.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✈️</div>
+                    <h3>Traveler Coordination Services</h3>
+                    <p>Our comprehensive traveler services streamline every aspect of your guests' journey, from arrival logistics to departure assistance. We handle reservations, special requests, concierge services, and personalized itinerary planning. Our dedicated team ensures seamless communication and rapid response to any needs, creating stress-free travel experiences that guests remember fondly.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <h3>Hospitality Consulting & Development</h3>
+                    <p>Leveraging our extensive industry experience, we offer strategic consulting services to help accommodation providers optimize their operations and enhance guest satisfaction. Our expertise covers revenue management, service training, operational efficiency, and market positioning. We transform good hospitality businesses into exceptional ones through proven methodologies and innovative approaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="section">
+        <div class="container">
+            <h2 class="section-title">What Makes Us Different</h2>
+            <p class="section-subtitle">The Globalia advantage in every interaction</p>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <h3>Deep Local Expertise Combined with Global Standards</h3>
+                    <p>Our team possesses intimate knowledge of Cancún and the Riviera Maya, understanding the nuances of each neighborhood, the best local experiences, and the unique characteristics that make each area special. This local insight is seamlessly integrated with internationally recognized hospitality standards, creating a perfect blend of authentic Mexican warmth and world-class service excellence. We know what international travelers expect and how to deliver it with a genuine local touch.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Personalized Attention at Scale</h3>
+                    <p>While we manage multiple properties and serve numerous guests, we never lose sight of the individual. Our sophisticated systems and well-trained staff enable us to provide personalized service that makes each guest feel like our only priority. We remember preferences, anticipate needs, and go above and beyond to create moments of delight. This ability to deliver intimate, personalized experiences while maintaining operational efficiency is rare in the industry.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>24/7 Commitment to Guest Satisfaction</h3>
+                    <p>Travel doesn't follow a schedule, and neither do we. Our round-the-clock availability means guests always have access to support, whether they need assistance at 3 AM or help with last-minute changes. This unwavering commitment to availability extends beyond just answering phones – we maintain response teams ready to solve problems, coordinate services, and ensure that no request goes unaddressed, regardless of the hour.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">How We Create Exceptional Experiences</h2>
+            <p class="section-subtitle">Our proven three-step approach to hospitality excellence</p>
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Discovery & Personalization</h3>
+                    <p>We begin by understanding your specific needs, preferences, and expectations. Through detailed consultation, we learn about your travel style, accommodation requirements, budget considerations, and any special requests. This comprehensive discovery phase allows us to match you with the perfect property and customize every detail of your stay.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Seamless Coordination & Setup</h3>
+                    <p>Once we understand your needs, our team coordinates all aspects of your accommodation experience. We handle reservations, prepare properties to your specifications, arrange special amenities, and coordinate with local service providers. Everything is meticulously organized before your arrival, ensuring a smooth, hassle-free check-in and a welcoming environment that feels immediately comfortable.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Active Support & Follow-Through</h3>
+                    <p>Throughout your stay, we remain actively engaged, providing ongoing support and assistance. Our team monitors guest satisfaction, addresses any concerns immediately, and continuously looks for opportunities to enhance your experience. Even after departure, we follow up to ensure complete satisfaction and gather insights that help us serve you even better in the future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's Start Your Journey</h2>
+            <p class="section-subtitle">Connect with us today to discuss your accommodation needs</p>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+52 123 456 7890">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Needs</label>
+                        <textarea id="message" name="message" placeholder="Please share details about your accommodation requirements, travel dates, number of guests, and any special requests..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Your Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>📍 Visit Us</h3>
+                    <p>Kukulkan Km. 16.5, Zona Hotelera<br>Cancún, Quintana Roo 77500<br>México</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email Us</h3>
+                    <p><a href="mailto:info@operadoraglobalia.info">info@operadoraglobalia.info</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Operadora Globalia México, S. de R.L. de C.V. All rights reserved.</p>
+            <p>Premium Traveler Accommodation Services | Cancún, Mexico</p>
+        </div>
+    </footer>
+</body>
+</html>
